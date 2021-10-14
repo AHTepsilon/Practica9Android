@@ -27,5 +27,33 @@ public class MainActivity extends AppCompatActivity {
 
         udp = new UDPConnection();
         udp.start();
+
+        beerBtn.setOnClickListener(
+                (view)->
+                {
+                    udp.sendMessage("beer");
+                }
+        );
+
+        subBtn.setOnClickListener(
+                (view) ->
+                {
+                    udp.sendMessage("sub");
+                }
+        );
+
+        yogurtBtn.setOnClickListener(
+                (view) ->
+                {
+                    udp.sendMessage("yogurt");
+                }
+        );
+
+        dogBtn.setOnClickListener(
+                (view) ->
+                {
+                    udp.sendMessage("dog");
+                }
+        );
     }
 }

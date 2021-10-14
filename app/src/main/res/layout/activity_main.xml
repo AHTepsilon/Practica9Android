@@ -22,8 +22,8 @@
 
     <Button
         android:id="@+id/beerButt"
-        android:layout_width="150"
-        android:layout_height="150"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="Cerveza"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,8 @@
 
     <Button
         android:id="@+id/yogurtButt"
-        android:layout_width="150"
-        android:layout_height="150"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="Yogurt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,8 +46,8 @@
 
     <Button
         android:id="@+id/subButt"
-        android:layout_width="150"
-        android:layout_height="150"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="Sándwich"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,8 +58,8 @@
 
     <Button
         android:id="@+id/hotDogButt"
-        android:layout_width="150"
-        android:layout_height="150"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="Hot Dog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
