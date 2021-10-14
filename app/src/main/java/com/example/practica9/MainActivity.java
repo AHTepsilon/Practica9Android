@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     UDPConnection udp;
 
+    TextView resultTextV;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,34 +27,36 @@ public class MainActivity extends AppCompatActivity {
         yogurtBtn = findViewById(R.id.yogurtButt);
         dogBtn = findViewById(R.id.hotDogButt);
 
+        resultTextV = findViewById(R.id.resultTV);
+
         udp = new UDPConnection();
         udp.start();
 
         beerBtn.setOnClickListener(
                 (view)->
                 {
-                    udp.sendMessage("beer");
+                    udp.sendMessage("1");
                 }
         );
 
         subBtn.setOnClickListener(
                 (view) ->
                 {
-                    udp.sendMessage("sub");
+                    udp.sendMessage("2");
                 }
         );
 
         yogurtBtn.setOnClickListener(
                 (view) ->
                 {
-                    udp.sendMessage("yogurt");
+                    udp.sendMessage("3");
                 }
         );
 
         dogBtn.setOnClickListener(
                 (view) ->
                 {
-                    udp.sendMessage("dog");
+                    udp.sendMessage("4");
                 }
         );
     }

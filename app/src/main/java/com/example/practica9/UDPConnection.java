@@ -1,5 +1,8 @@
 package com.example.practica9;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -11,6 +14,8 @@ public class UDPConnection extends Thread
 {
 
     private DatagramSocket socket;
+
+    String message;
 
     public void run()
     {
@@ -25,9 +30,8 @@ public class UDPConnection extends Thread
                 System.out.println("Awaiting for datagram...");
                 socket.receive(packet);
 
-                String message = new String(packet.getData()).trim();
-                System.out.println("Datagram Received: ");
-
+                message = new String(packet.getData()).trim();
+                Log.d(">>>", "Datagram Received: " + message);
             }
 
         } catch (SocketException e) {
@@ -59,6 +63,14 @@ public class UDPConnection extends Thread
                     }
                 }
         ).start();
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
 
