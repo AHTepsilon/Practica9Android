@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     Button yogurtBtn;
     Button dogBtn;
 
+    UDPConnection udp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,5 +25,7 @@ public class MainActivity extends AppCompatActivity {
         yogurtBtn = findViewById(R.id.yogurtButt);
         dogBtn = findViewById(R.id.hotDogButt);
 
+        udp = new UDPConnection();
+        udp.start();
     }
 }
