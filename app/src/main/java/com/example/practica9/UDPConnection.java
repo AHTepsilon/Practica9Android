@@ -17,6 +17,13 @@ public class UDPConnection extends Thread
 
     String message;
 
+    private MainActivity mainActivity;
+
+    public void setObserver(MainActivity mainActivity)
+    {
+        this.mainActivity = mainActivity;
+    }
+
     public void run()
     {
         try {
@@ -32,6 +39,8 @@ public class UDPConnection extends Thread
 
                 message = new String(packet.getData()).trim();
                 Log.d(">>>", "Datagram Received: " + message);
+
+                mainActivity.whenTheMessageArrives(message);
             }
 
         } catch (SocketException e) {

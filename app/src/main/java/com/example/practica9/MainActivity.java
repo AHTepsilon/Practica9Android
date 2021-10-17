@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         resultTextV = findViewById(R.id.resultTV);
 
         udp = new UDPConnection();
+        udp.setObserver(this);
         udp.start();
 
         beerBtn.setOnClickListener(
@@ -57,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
                 (view) ->
                 {
                     udp.sendMessage("4");
+                }
+        );
+    }
+
+    public void whenTheMessageArrives(String message)
+    {
+        runOnUiThread(
+                ()->
+                {
+                    Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
                 }
         );
     }
